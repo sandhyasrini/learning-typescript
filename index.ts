@@ -145,3 +145,16 @@ class Employee {
 const empl = new Employee('Sandhya', 354020, 'Srinivasan')
 console.log(empl.getFullName())
 
+//Readonly
+
+//Readonly is similar to const in functions. Value once assigned cannot be reassigned
+
+class Person {
+    constructor(readonly birthDate: Date) {
+        this.birthDate = birthDate;
+    }
+}
+
+let person = new Person(new Date(1990, 12, 25));
+// person.birthDate = new Date(1991, 12, 25); // Compile error
+
