@@ -90,3 +90,23 @@ numericObjects.setData(1)
 console.log(numericObjects.getData())
 
 
+//------------------------------Utility generic types provided in TS----------------------------------
+
+
+//Partial - This creates a default optional type when initialising a variable with type
+
+interface newStudent {
+    name: string
+    dob: number
+    age: number
+}
+
+function createStudent(name: string, dob: number, age: number) {
+    let data : Partial<newStudent> = {} // This would fail if not assigned as partial and would complain
+    // that there is no key  name, age, dob in the object
+    data.name = name
+    data.age = age
+    data.dob = dob
+}
+
+
