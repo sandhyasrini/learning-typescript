@@ -64,3 +64,29 @@ console.log(getValueByKey({name: 'Sandhya'}, 'name'))
 
 
 
+//----------------------------------CLASSES EXAMPLE------------------------------------------------------
+
+
+class genericObject<T extends string | number> {
+    private data: T[] = []
+
+    setData(val: T) {
+        this.data.push(val)
+    }
+
+    getData() {
+        return this.data
+    }
+}
+
+const stringObjects = new genericObject<string>()
+
+stringObjects.setData('hello')
+console.log(stringObjects.getData())
+
+const numericObjects = new genericObject<number>()
+
+numericObjects.setData(1)
+console.log(numericObjects.getData())
+
+
