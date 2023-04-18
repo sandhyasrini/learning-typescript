@@ -18,4 +18,16 @@ promise.then((data) => {
 });
 
 
+//------------------------------------------CREATING A GENERIC FUNCTION-------------------------------------
+
+// Here we have created a generic Type which takes 2 values, both of type Object
+// The type of the subtype can be assigned by extending the type that you want
+// Like below: T extends object (or) T extends string
+function combineObjects<T extends object, U extends object> (obj1: T, obj2: U) { 
+    return Object.assign(obj1, obj2)
+}
+
+const result = combineObjects({name: 'Sandhya'}, {profession: 'Developer'})
+console.log(result)
+
 
